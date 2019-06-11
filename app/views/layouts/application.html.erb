@@ -10,6 +10,24 @@
   </head>
 
   <body>
-    <%= yield %>
+    
+    <div class="container">
+      <nav>
+        <%= link_to 'Home', root_path %>
+        |
+        <%= link_to 'Activities', activities_path %>
+        |
+        <%= link_to 'Places', places_path %>
+        |
+        <%= link_to 'Regions', regions_path %>
+        |
+        <%= link_to 'Seasons', seasons_path %>
+        |
+        <%= link_to 'Sign Up', new_user_path %>
+        |
+        <%= link_to 'Sign In', login_path %>
+      </nav>
+      <%= yield %>
+    </div>
   </body>
 </html>

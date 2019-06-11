@@ -1,0 +1,13 @@
+<h1>Activities</h1>
+
+<% @activities.each do |activity| %>
+  <%= image_tag activity.image, :class => 'thumb' %>
+
+  <ul>
+    <li> <%= link_to activity.name, activity_path(activity.id) %></li>
+    <li>About: <%= activity.about %></li>
+
+
+  </ul>
+<% end %>
+<%= link_to 'New activity', new_activity_path %>

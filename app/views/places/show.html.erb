@@ -1,0 +1,31 @@
+<h1><%= @place.name %></h1>
+
+<%= image_tag @place.image, :class => 'feature' %>
+
+<ul>
+  <li>Name: <%= @place.name %></li>
+  <li>About: <%= @place.about %></li>
+  <li>Distance from Moscow: <%= @place.distance_from_moscow %></li>
+  <li>Average winter temperature (low/high): <%= @place.avg_winter_temp %></li>
+  <li>Average summer temperature (low/high): <%= @place.avg_summer_temp %></li>
+  <li>Avarage annual rainfall: <%= @place.avg_rainfall %></li>
+
+
+
+    <% @place.activities.each do |activity| %>
+      <li>Activity: <%= link_to activity.name, activity_path(:id => activity.id) %></li>
+    <% end %>
+    <% @place.regions.each do |region| %>
+      <li>Region: <%= link_to region.name, region_path(:id => region.id) %></li>
+    <% end %>
+    <% @place.seasons.each do |season| %>
+      <li>Season: <%= link_to season.name, season_path(:id => season.id) %></li>
+    <% end %>
+
+
+</ul>
+
+<div class="controls">
+  <%= link_to 'Edit Place', edit_place_path(@place.id) %>
+  <%= link_to 'Delete Place', place_path(@place.id), :method => 'delete' %>
+</div>

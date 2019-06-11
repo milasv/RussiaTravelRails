@@ -1,0 +1,9 @@
+<%= form_for @activity do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, :autofocus => true, :required => true %>
+  <%= f.label :about %>
+  <%= f.text_field :about %>
+  <%= f.label :image %>
+  <%= f.url_field :image %>
+  <%= f.submit %>
+<% end %>

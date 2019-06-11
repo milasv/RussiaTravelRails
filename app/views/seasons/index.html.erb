@@ -1,0 +1,14 @@
+<h1>Seasons</h1>
+
+<% @seasons.each do |season| %>
+  <%= image_tag season.image, :class => 'thumb' %>
+
+  <ul>
+    <li> <%= link_to season.name, season_path(season.id) %></li>
+    <li>About: <%= season.about %></li>
+    <li>Time: <%= season.time %></li>
+
+
+  </ul>
+<% end %>
+<%= link_to 'New season', new_season_path %>

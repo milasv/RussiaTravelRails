@@ -1,0 +1,18 @@
+<%= form_for @place do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, :autofocus => true, :required => true %>
+  <%= f.label :about %>
+  <%= f.text_field :about %>
+  <%= f.label :image %>
+  <%= f.url_field :image %>
+  <%= f.label :distance_from_moscow, "Distance from Moscow" %>
+  <%= f.text_field :distance_from_moscow %>
+  <%= f.label :avg_winter_temp, "Average winter temperature (low/high)" %>
+  <%= f.text_field :avg_winter_temp %>
+  <%= f.label :avg_summer_temp, "Average summer temperature (low/high)" %>
+  <%= f.text_field :avg_summer_temp %>
+  <%= f.label :avg_rainfall, "Avarage annual rainfall" %>
+  <%= f.text_field :avg_rainfall %>
+
+  <%= f.submit %>
+<% end %>

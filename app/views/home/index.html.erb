@@ -1,0 +1,17 @@
+<h1>Russia Travel</h1>
+
+<h2>Why Russia?</h2>
+<p> blabla</p>
+
+<h3>If you want to know more about Russia</h3>
+
+<% @home.each do |activity| %>
+<ul>
+<li> <%= link_to activity.name, activity_path(activity.id) %></li>
+</ul>
+
+<% if @current_user.present? %>
+  <h2>Welcome back <%= @current_user.email %></h2>
+<% end %>
+
+<% end %>

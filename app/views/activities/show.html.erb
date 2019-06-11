@@ -1,0 +1,27 @@
+<h1><%= @activity.name %></h1>
+
+<%= image_tag @activity.image, :class => 'feature' %>
+
+<ul>
+  <li>Name: <%= @activity.name %></li>
+  <li>About: <%= @activity.about %></li>
+
+
+
+    <% @activity.places.each do |place| %>
+      <li>Place: <%= link_to place.name, place_path(:id => place.id) %></li>
+    <% end %>
+    <% @activity.regions.each do |region| %>
+      <li>Region: <%= link_to region.name, region_path(:id => region.id) %></li>
+    <% end %>
+    <% @activity.seasons.each do |season| %>
+      <li>Season: <%= link_to season.name, season_path(:id => season.id) %></li>
+    <% end %>
+
+
+</ul>
+
+<div class="controls">
+  <%= link_to 'Edit Activity', edit_activity_path(@activity.id) %>
+  <%= link_to 'Delete Activity', activity_path(@activity.id), :method => 'delete' %>
+</div>
