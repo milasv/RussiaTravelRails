@@ -1,6 +1,10 @@
 class SeasonsController < ApplicationController
   def index
     @seasons = Season.all
+    respond_to do |format|
+      format.html
+      format.json {render json: @seasons}
+    end
   end
 
   def show

@@ -15,6 +15,8 @@ s2 = Season.create(:name => 'Spring', :about => 'xxx', :image => 'https://i.pini
 s3 = Season.create(:name => 'Summer', :about => 'xxx', :image => 'https://i.pinimg.com/originals/0a/fc/9d/0afc9d628cf8fe5cf89d815799f672b7.jpg', :time => 'June-August')
 s4 = Season.create(:name => 'Autumn', :about => 'xxx', :image => 'https://million-wallpapers.ru/wallpapers/4/48/14016384566776290427.jpg', :time => 'September-November')
 
+puts "created #{Season.all.length} seasons"
+
 
 puts "Creating activities"
 
@@ -25,6 +27,8 @@ a3 = Activity.create(:name => 'Outdoor', :about => 'Gardens & Parks, Nature & Wi
 a4 = Activity.create(:name => 'Winter activities', :about => 'Snowboarding, Skiing, Hiking', :image => 'https://ic.pics.livejournal.com/mperial/67224828/305992/305992_900.jpg')
 a5 = Activity.create(:name => 'Water activities', :about => 'Wakeboarding, Wakesurfing, Windsurfing, Diving, Snorkeling, Swimming, Fishing, Kayaking, Kiteboating, Kitesurfing, Rafting, Sailing', :image => 'https://images.aif.ru/017/100/64cc5805f16ea07f145f186d0f68f001.jpg')
 
+puts "created #{Activity.all.length} activities"
+
 
 puts "Creating regions"
 
@@ -34,6 +38,9 @@ r2 = Region.create(:name => '', :about => 'xxx', :image => '', :capital => '')
 r3 = Region.create(:name => '', :about => 'xxx', :image => '', :capital => '')
 r4 = Region.create(:name => '', :about => 'xxx', :image => '', :capital => '')
 r5 = Region.create(:name => '', :about => 'xxx', :image => '', :capital => '')
+
+puts "created #{Region.all.length} regions"
+
 
 puts "Creating places"
 
@@ -48,6 +55,7 @@ p7 = Place.create(:name => 'Oymyakon', :about => 'xxx', :image => 'https://files
 p8 = Place.create(:name => 'Sochi', :about => 'xxx', :image => 'http://stroyka.ru/upload/news/1021/%D0%BA%D1%80%D0%B4.jpg', :distance_from_moscow => '1600 km', :avg_winter_temp => '10° / 3°', :avg_summer_temp => '27° / 20°', :avg_rainfall => '1500-1600 mm', :region_id => r1.id )
 
 
+puts "created #{Place.all.length} places"
 
 
 
@@ -58,3 +66,5 @@ puts "Creating Users"
 User.destroy_all
 u1 = User.create(:fname => 'Mila', :lname => 'Svirina', :email => 'mila@ga.co', :password => 'chicken', :admin => true)
 u2 = User.create(:fname => 'Matthew', :lname => 'Svirin', :email => 'mat@ga.co', :password => 'russia')
+
+puts "created #{User.all.length} users"
