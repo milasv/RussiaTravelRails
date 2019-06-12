@@ -9,6 +9,10 @@ class SeasonsController < ApplicationController
 
   def show
     @season = Season.find params[:id]
+    respond_to do |format|
+      format.html
+      format.json {render json: @season}
+    end
   end
 
   def new

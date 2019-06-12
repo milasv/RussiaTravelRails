@@ -9,6 +9,10 @@ class PlacesController < ApplicationController
 
   def show
     @place = Place.find params[:id]
+    respond_to do |format|
+      format.html
+      format.json {render json: @place}
+    end
   end
 
   def new
@@ -39,7 +43,7 @@ class PlacesController < ApplicationController
   private
   def place_params
     # Strong parameters: whitelist of sanitized input (stuff that is OKAY to put in the database)
-    params.require(:place).permit(:name, :about, :image, :distance_from_moscow, :avg_winter_temp, :avg_summer_temp, :avg_rainfall)
+    params.require(:place).permit(:name, :about, :image, :distance_from_moscow, :avg_winter_temp, :avg_summer_temp, :avg_rainfall, :lat, :lng)
   end
 
   def set_place

@@ -9,6 +9,10 @@ class RegionsController < ApplicationController
 
   def show
     @region = Region.find params[:id]
+    respond_to do |format|
+      format.html
+      format.json {render json: @region}
+    end
   end
 
   def new

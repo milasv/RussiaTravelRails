@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_10_115722) do
+ActiveRecord::Schema.define(version: 2019_06_12_130438) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2019_06_10_115722) do
     t.text "image"
   end
 
-  create_table "activities_places", force: :cascade do |t|
+  create_table "activities_places", id: false, force: :cascade do |t|
     t.integer "place_id"
     t.integer "activity_id"
   end
@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 2019_06_10_115722) do
     t.text "avg_winter_temp"
     t.text "avg_summer_temp"
     t.integer "avg_rainfall"
+    t.float "lat"
+    t.float "lng"
   end
 
   create_table "places_seasons", id: false, force: :cascade do |t|

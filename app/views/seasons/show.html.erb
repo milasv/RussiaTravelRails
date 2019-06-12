@@ -14,7 +14,7 @@
     <% @season.activities.each do |activity| %>
       <li>Activity: <%= link_to activity.name, activity_path(:id => activity.id) %></li>
     <% end %>
-    <% @season.regions.each do |reagion| %>
+    <% @season.regions.each do |region| %>
       <li>Region: <%= link_to region.name, region_path(:id => region.id) %></li>
     <% end %>
 
